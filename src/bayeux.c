@@ -854,6 +854,7 @@ BayeuxClient* bayeux_client_create(const char* endpoint, const BayeuxClientOpts*
   client->advice.interval_ms    = opts->interval_ms;
   client->advice.timeout_ms     = opts->timeout_ms;
   client->endpoint              = strdup(endpoint);
+  client->id                    = NULL;
   client->batch_id              = 0;
   client->message_id            = 0;
   client->state                 = STATE_UNCONNECTED;
