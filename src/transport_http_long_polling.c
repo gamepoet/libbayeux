@@ -110,7 +110,9 @@ static void check_curl_multi(TransportHttpLongPolling* http) {
 
       // notify callback
       http->recv_callback(msgs, http->recv_callback_ctx);
-      
+
+      json_object_put(msgs);
+
       // cleanup memory
       free(conn->data);
       free(conn);
