@@ -23,6 +23,7 @@
 		5B88127A15EDFA1200076621 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7389C015E0147300FF9305 /* libcurl.dylib */; };
 		5B88128115F868A600076621 /* json_util.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B88127F15F868A600076621 /* json_util.c */; };
 		5B88128215F868A600076621 /* json_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B88128015F868A600076621 /* json_util.h */; };
+		5BB7302A1605A1E700B40FC2 /* bayeux.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7389A715D9D64000FF9305 /* bayeux.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB7302A1605A1E700B40FC2 /* bayeux.h in Headers */,
 				5B88126C15EDDFCC00076621 /* str.h in Headers */,
 				5B88127115EDF69900076621 /* transport.h in Headers */,
 				5B88127515EDF86800076621 /* log.h in Headers */,
