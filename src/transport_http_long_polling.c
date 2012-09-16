@@ -169,7 +169,7 @@ static size_t on_curl_write(char* buf, size_t size, size_t count, void* ctx) {
   // copy
   memcpy(conn->data + conn->data_count, buf, bytes);
   conn->data_count += bytes;
-  
+
   // ensure data is null-terminated
   conn->data[conn->data_count] = 0;
 
@@ -285,7 +285,7 @@ void transport_http_long_polling_create(TransportHttpLongPolling* restrict trans
 //------------------------------------------------------------------------------
 void transport_http_long_polling_destroy(TransportHttpLongPolling* transport) {
   // TODO: remove easy handles and clean them up
-  
+
   curl_multi_cleanup(transport->curl_multi);
   curl_slist_free_all(transport->http_headers);
   evtimer_del(transport->ev_timer);
@@ -316,7 +316,7 @@ void transport_http_long_polling_request(TransportHttpLongPolling* restrict tran
   curl_easy_setopt(conn->curl_easy, CURLOPT_URL,            transport->url);
   curl_easy_setopt(conn->curl_easy, CURLOPT_WRITEDATA,      conn);
   curl_easy_setopt(conn->curl_easy, CURLOPT_WRITEFUNCTION,  &on_curl_write);
-  
+
   if (transport->log_messages) {
     log_info("send: %s\n", msg);
   }

@@ -94,7 +94,7 @@ void transport_send(Transport* restrict transport, const char* restrict msg) {
     case TRANSPORT_TYPE_HTTP_LONG_POLLING:
       transport_http_long_polling_request(&transport->impl.long_polling, msg);
       break;
-      
+
     default:
       log_info("invalid transport type: %d", transport->type);
       break;
