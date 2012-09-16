@@ -869,7 +869,7 @@ BayeuxClient* bayeux_client_create(const char* endpoint, const BayeuxClientOpts*
   client->ev_timeout_connect    = evtimer_new(client->ev_base, &on_ev_timeout_connect, client);
   client->ev_timeout_flush      = evtimer_new(client->ev_base, &on_ev_timeout_flush, client);
   client->ev_timeout_handshake  = evtimer_new(client->ev_base, &on_ev_timeout_handshake, client);
-  client->owns_ev_base          = NULL != opts->ev_base;
+  client->owns_ev_base          = NULL == opts->ev_base;
 
   client->channels              = NULL;
   client->channel_capacity      = 0;
