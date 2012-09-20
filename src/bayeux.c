@@ -549,10 +549,6 @@ static void on_batch_recv(json_object* msgs, void* ctx) {
 
 //------------------------------------------------------------------------------
 static void schedule_connect(BayeuxClient* client) {
-  if (client->message_id >= 0x6) {
-    return;
-  }
-
   if (0 == evtimer_pending(client->ev_timeout_connect, NULL)) {
     struct timeval tv = {
       client->advice.interval_ms / 1000000,
